@@ -1,4 +1,6 @@
 #include <time.h>
+
+#include <SFML/Graphics.hpp>
 const int M = 20;
 const int N = 10;
 
@@ -17,7 +19,6 @@ int figures[7][4] = {
     3, 5, 7, 6,  // J
     2, 3, 4, 5,  // O
 };
-#include <SFML/Graphics.hpp>
 int main() {
   sf::RenderWindow window(sf::VideoMode(320, 480), "The Game!");
   sf::Texture t;
@@ -43,6 +44,7 @@ int main() {
 
     for (int i{}; i < 4; i++) {
       s.setPosition(a[i].x * 18, a[i].y * 18);
+      window.draw(s);
     }
     window.display();
   }
